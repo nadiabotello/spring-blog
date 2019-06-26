@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Results Page</title>
+</head>
+<body>
+
+<h1>The number was: <th:block th:text="${random}"></th:block></h1>
+<h1>Your guess was: <th:block th:text="${n}"></th:block></h1>
+
+<h2>Your guess was: <th:block th:text="${correctGuess}"></th:block></h2>
+
+
+<div th:replace="partials/footer :: footer"></div>
+</body>
+</html>

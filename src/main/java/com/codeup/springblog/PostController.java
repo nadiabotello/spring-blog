@@ -1,21 +1,48 @@
 package com.codeup.springblog;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @Controller
 public class PostController {
 
     @GetMapping("/posts")
-    @ResponseBody
-    public String index() {
-        return "This will have some posts";
+    public String index(Model model) {
+
+        ArrayList<Post> postArrayList = new ArrayList<>(2);
+
+        postArrayList.add(new Post("Meow", "Stinky cat thinking longingly about tuna brine run up and down stairs."));
+        postArrayList.add(new Post("Hiss", "Eat fish on floor get scared by sudden appearance of cucumber scream for no reason at 4 am"));
+
+        model.addAttribute("posts", postArrayList);
+
+        return "posts/index";
+
     }
 
-    @GetMapping("/posts/{id}")
-    @ResponseBody
-    public String show(@PathVariable long id) {
-        return "This will have an individual post with unique ID: " + id;
+//    @GetMapping("/posts/{id}")
+//    public String show(@PathVariable long id, Model model) {
+//
+//        Post post = new Post("Test post", "I'm going to lap some water out of my master's cup meow push your water glass on the floor peer out window, chatter at birds, lure them to mouth and touch my tail, i shred your hand purrrr mice. Kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? roll on the floor purring your whiskers off and sleep on my human's head and the fat cat sat on the mat bat away with paws russian blue.");
+//
+//        model.addAttribute("post.title", post.getTitle());
+//        model.addAttribute("post.body", post.getBody());
+//
+//        return "show";
+//    }
+
+    @GetMapping("/post")
+    public String show(Model model) {
+
+        Post testPost = new Post("Test post", "I'm going to lap some water out of my master's cup meow push your water glass on the floor peer out window, chatter at birds, lure them to mouth and touch my tail, i shred your hand purrrr mice. Kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? roll on the floor purring your whiskers off and sleep on my human's head and the fat cat sat on the mat bat away with paws russian blue.");
+
+        model.addAttribute("title", testPost.getTitle());
+        model.addAttribute("body", testPost.getBody());
+
+        return "posts/show";
     }
 
     @GetMapping("/posts/create")

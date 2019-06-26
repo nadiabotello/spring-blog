@@ -1,8 +1,5 @@
 package com.codeup.springblog;
 
-import org.apache.catalina.connector.Response;
-import org.graalvm.compiler.lir.aarch64.AArch64ArithmeticOp;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
