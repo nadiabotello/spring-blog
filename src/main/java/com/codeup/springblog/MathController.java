@@ -1,10 +1,10 @@
 package com.codeup.springblog;
 
+import org.apache.catalina.connector.Response;
+import org.graalvm.compiler.lir.aarch64.AArch64ArithmeticOp;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MathController {
@@ -18,7 +18,7 @@ public class MathController {
     @RequestMapping(path = "/subtract/{number1}/from/{number2}", method = RequestMethod.GET)
     @ResponseBody
     public String subtract(@PathVariable int number1, @PathVariable int number2){
-        return number1 + " minus " + number2 + " is " + (number1 - number2);
+        return number2 + " minus " + number1 + " is " + (number2 - number1);
     }
 
     @RequestMapping(path = "/multiply/{number1}/and/{number2}", method = RequestMethod.GET)
@@ -32,6 +32,8 @@ public class MathController {
     public String divide(@PathVariable int number1, @PathVariable int number2){
         return number1 + " divided by " + number2 + " is " + (number1 / number2);
     }
+
+
 
 
 }

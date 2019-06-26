@@ -8,26 +8,27 @@ public class PostController {
 
     @GetMapping("/posts")
     @ResponseBody
-    public String posts() {
+    public String index() {
         return "This will have some posts";
     }
 
     @GetMapping("/posts/{id}")
     @ResponseBody
-    public String postsID(@PathVariable int id) {
+    public String show(@PathVariable long id) {
         return "This will have an individual post with unique ID: " + id;
     }
 
     @GetMapping("/posts/create")
     @ResponseBody
-    public String postsCreate() {
+    public String create() {
         return "This will have a form for creating a post.";
     }
 
-    @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
+//    @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
+    @PostMapping("/posts/create")
     @ResponseBody
-    public String addPost(){
-        return "This is where you will create the post";
+    public void insert(){
+
     }
 
 }
