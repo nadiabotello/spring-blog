@@ -9,16 +9,17 @@ import java.util.ArrayList;
 @Controller
 public class PostController {
 
+
+    private final PostRepository postDao;
+
+    public PostController(PostRepository postDao) {
+        this.postDao = postDao;
+    }
+
+
     @GetMapping("/posts")
     public String index(Model model) {
-
-        ArrayList<Post> postArrayList = new ArrayList<>(2);
-
-        postArrayList.add(new Post("Meow", "Stinky cat thinking longingly about tuna brine run up and down stairs."));
-        postArrayList.add(new Post("Hiss", "Eat fish on floor get scared by sudden appearance of cucumber scream for no reason at 4 am"));
-
-        model.addAttribute("posts", postArrayList);
-
+        model.addAttribute("posts", postDao.findAll());
         return "posts/index";
 
     }
@@ -34,16 +35,16 @@ public class PostController {
 //        return "show";
 //    }
 
-    @GetMapping("/post")
-    public String show(Model model) {
-
-        Post testPost = new Post("Test post", "I'm going to lap some water out of my master's cup meow push your water glass on the floor peer out window, chatter at birds, lure them to mouth and touch my tail, i shred your hand purrrr mice. Kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? roll on the floor purring your whiskers off and sleep on my human's head and the fat cat sat on the mat bat away with paws russian blue.");
-
-        model.addAttribute("title", testPost.getTitle());
-        model.addAttribute("body", testPost.getBody());
-
-        return "posts/show";
-    }
+//    @GetMapping("/post")
+//    public String show(Model model) {
+//
+//        Post testPost = new Post("Test post", "I'm going to lap some water out of my master's cup meow push your water glass on the floor peer out window, chatter at birds, lure them to mouth and touch my tail, i shred your hand purrrr mice. Kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? roll on the floor purring your whiskers off and sleep on my human's head and the fat cat sat on the mat bat away with paws russian blue.");
+//
+//        model.addAttribute("title", testPost.getTitle());
+//        model.addAttribute("body", testPost.getBody());
+//
+//        return "posts/show";
+//    }
 
     @GetMapping("/posts/create")
     @ResponseBody
