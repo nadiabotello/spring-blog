@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.ArrayList;
 
 @Controller
@@ -21,7 +22,6 @@ public class PostController {
     public String index(Model model) {
         model.addAttribute("posts", postDao.findAll());
         return "posts/index";
-
     }
 
 //    @GetMapping("/posts/{id}")
@@ -35,28 +35,27 @@ public class PostController {
 //        return "show";
 //    }
 
-//    @GetMapping("/post")
-//    public String show(Model model) {
-//
-//        Post testPost = new Post("Test post", "I'm going to lap some water out of my master's cup meow push your water glass on the floor peer out window, chatter at birds, lure them to mouth and touch my tail, i shred your hand purrrr mice. Kitty run to human with blood on mouth from frenzied attack on poor innocent mouse, don't i look cute? roll on the floor purring your whiskers off and sleep on my human's head and the fat cat sat on the mat bat away with paws russian blue.");
-//
-//        model.addAttribute("title", testPost.getTitle());
-//        model.addAttribute("body", testPost.getBody());
-//
-//        return "posts/show";
-//    }
+
 
     @GetMapping("/posts/create")
-    @ResponseBody
     public String create() {
-        return "This will have a form for creating a post.";
+        return "/posts/create";
     }
 
-//    @RequestMapping(path = "/posts/create", method = RequestMethod.POST)
     @PostMapping("/posts/create")
-    @ResponseBody
-    public void insert(){
+    public String insert(
+            @RequestParam String title,
+            @RequestParam String body) {
+        Post postToInsert = new Post(title, body);
+        postDao.save(postToInsert);
+        return "redirect:/posts/index";
+    }
 
+    @GetMapping("/posts/{id}")
+    public String delete(@PathVariable int id, Model model){
+        model.addAttribute("posts", postDao.findOne(id));
+//        postDao.delete(id);
+        return "/posts/show";
     }
 
 }
