@@ -19,6 +19,11 @@ public class Dog {
     @Column(name = "reside_state", nullable = false, columnDefinition = "char(2)")
     private String resideState;
 
+    @OneToOne
+    private Owner owner;
+
+
+
     public Dog(int id, int age, String name, String resideState) {
         this.id = id;
         this.age = age;
