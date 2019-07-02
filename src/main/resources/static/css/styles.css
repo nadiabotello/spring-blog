@@ -1,13 +1,13 @@
-.navbar-form input, .form-inline input {
-  width:auto;
-}
+/*.navbar-form input, .form-inline input {*/
+/*  width:auto;*/
+/*}*/
 
 body {
-  padding-top:50px;
+  padding-top:0px;
 }
 
 footer {
-  margin-top: 140px;
+  margin-top: 0px;
   padding-top:40px;
   padding-bottom:40px;
   background-color:#ededed;
@@ -36,13 +36,14 @@ footer {
 }
 
 .story-img {
-  margin-top:25%;
+  /*margin-top:25%;*/
   display:block;
 }
 
 a,a:hover {
   color:#223344;
   text-decoration:none;
+  margin-bottom: 25px;
 }
 
 .icon-bar {
@@ -55,9 +56,9 @@ a,a:hover {
   }
 }
 
-.dropdown-menu {
-  min-width: 250px;
-}
+/*.dropdown-menu {*/
+/*  min-width: 250px;*/
+/*}*/
 
 .panel {
   border-color:transparent;

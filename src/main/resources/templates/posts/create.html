@@ -4,17 +4,21 @@
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
 
-<form th:action="@{'/posts/create'}" th:method="POST">
+<div class="d-flex justify-content-center align-items-center container ">
+    <div class="row ">
+<form th:action="@{'/posts/create'}" th:method="POST" th:object="${post}">
     <div class="form-group">
         <label for="title">Post Title</label>
-        <input type="text" class="form-control" name="title" id="title" placeholder="Blog Title" />
+        <input type="text" class="form-control" th:field="*{title}" placeholder="Post Title" />
     </div>
     <div class="form-group">
         <label for="body">Post Text</label>
-        <textarea class="form-control" name="body" id="body" rows="3"></textarea>
+        <textarea class="form-control" th:field="*{body}" rows="3"></textarea>
     </div>
-    <button type="button" class="btn btn-primary">Submit Post</button>
+    <a th:href="@{'/posts/create'}"><button class="btn btn-primary">Submit</button></a>
 </form>
+</div>
+</div>
 
 <div th:replace="partials/footer :: footer"></div>
 </body>

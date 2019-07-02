@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="partials/head :: head('Show Post')"></div>
+<head th:replace="partials/head :: head('Edit Post')">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+</head>
 <body>
-<div th:replace="partials/navbar :: navbar"></div>
+
+<nav th:replace="partials/navbar :: nav"></nav>
 
 <main class="container">
         <div class="card mx-auto" style="height: 100%; width: 80%">
             <img src="http://placekitten.com/600/400" class="mx-auto" style="height: 50%; width: 50%" />
-            <h3 class="text-center" th:text="${title}"></h3>
-            <p class="text-center" th:text="${body}"></p>
-            <h1 class="text-center" th:text="${post.author.email}"></h1>
-            </div>
+            <h3 class="text-center" th:text="${post.title}"></h3>
+            <p class="text-center" th:text="${post.body}"></p>
+            <!-- fix author -->
+<!--            <h1 class="text-center" th:text="${post.author.email}"></h1>-->
         </div>
 </main>
 

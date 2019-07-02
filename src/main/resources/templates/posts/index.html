@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('View Posts')">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
 
@@ -55,8 +53,8 @@
                                         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
                                         dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
                                         Aliquam in felis sit amet augue.</p>
-                                    <a th:href="@{'/posts/'+${post.id}+'/edit'}">Edit</a>
-                                    <p class="lead"><button class="btn btn-default">Read More</button></p>
+                                    <a th:href="@{'/posts/'+${post.id}+'/edit'}"><button class="btn btn-default">Edit</button></a>
+
                                     <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
                                     <ul class="list-inline"><li><a href="#">2 Days Ago</a></li><li><a href="#"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li><li><a href="#"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li></ul>
                                 </div>
@@ -68,8 +66,9 @@
                     <hr />
                     </th:block>
 
-
-                    <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <div class="col-md-4 m-*-auto">
+                    <a href="/" class="btn btn-primary">More</a>
+                    </div>
 
                 </div>
             </div>
@@ -94,31 +93,12 @@
                 <a class="btn btn-google-plus btn-md" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
             </div>
 
-            <th:block th:include="partials/footer :: footer" />
-
         </div>
     </div>
 </div>
 
 <hr />
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-<!--                <ul class="list-inline">-->
-<!--                    <li><i class="icon-facebook icon-2x"></i></li>-->
-<!--                    <li><i class="icon-twitter icon-2x"></i></li>-->
-<!--                    <li><i class="icon-google-plus icon-2x"></i></li>-->
-<!--                    <li><i class="icon-pinterest icon-2x"></i></li>-->
-<!--                </ul>-->
-
-            </div>
-            <div class="col-sm-6">
-                <a class="pull-right"><i class="icon-eye-open"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
+<div th:replace="partials/footer :: footer"></div>
 </body>
 </html>
