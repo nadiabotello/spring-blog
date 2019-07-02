@@ -59,6 +59,8 @@ public class PostController {
     public String update(
             @PathVariable long id,
             @ModelAttribute Post post) {
+        Post original = postDao.findOne(id);
+        post.setAuthor(original.getAuthor());
         postDao.save(post);
         return "redirect:/posts";
     }
