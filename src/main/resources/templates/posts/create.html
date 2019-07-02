@@ -4,7 +4,7 @@
 <body>
 <div th:replace="partials/navbar :: navbar"></div>
 
-<form th:action="@{'/'}" th:method="POST">
+<form th:action="@{'/posts/create'}" th:method="POST">
     <div class="form-group">
         <label for="title">Post Title</label>
         <input type="text" class="form-control" name="title" id="title" placeholder="Blog Title" />

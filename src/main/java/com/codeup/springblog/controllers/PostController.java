@@ -33,7 +33,7 @@ public class PostController {
 
     @GetMapping("/posts/create")
     public String create() {
-        return "/posts/create";
+        return "posts/create";
     }
 
 
@@ -42,9 +42,9 @@ public class PostController {
             @RequestParam String title,
             @RequestParam String body) {
         Post postToInsert = new Post(title, body);
-        postToInsert.setAuthor(userDao.findOne((long) 1));
+        postToInsert.setAuthor(userDao.findOne(1L));
         postDao.save(postToInsert);
-        return "redirect:/posts/index";
+        return "redirect:/posts";
     }
 
     @GetMapping("/posts/{id}/edit")
