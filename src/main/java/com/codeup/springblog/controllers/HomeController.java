@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
-    @GetMapping("/")
-    @ResponseBody
-    public String home() {
-        return "This is the landing page!";
-    }
+//    @GetMapping("/")
+//    public String home() {
+//        return "This is the landing page!";
+//    }
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String welcome(Model model) {
         model.addAttribute("username", "Bjork");
         return "home";

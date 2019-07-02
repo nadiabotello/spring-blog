@@ -55,7 +55,9 @@
                                         Aliquam in felis sit amet augue.</p>
                                     <a th:href="@{'/posts/'+${post.id}+'/edit'}"><button class="btn btn-default">Edit</button></a>
 
-                                    <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
+                                    <p class="pull-right">
+                                        <span class="label label-default"><i class="fa fa-tags" aria-hidden="true">keyword</i></span>
+                                        <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
                                     <ul class="list-inline"><li><a href="#">2 Days Ago</a></li><li><a href="#"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li><li><a href="#"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li></ul>
                                 </div>
                                 <div class="col-xs-3"></div>
@@ -85,14 +87,11 @@
 <div class="container" id="footer">
     <div class="row">
         <div class="col col-sm-12">
-
             <h2>Follow</h2>
             <div class="btn-group">
                 <a class="btn btn-twitter btn-md" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
                 <a class="btn btn-facebook btn-md" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-                <a class="btn btn-google-plus btn-md" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
             </div>
-
         </div>
     </div>
 </div>

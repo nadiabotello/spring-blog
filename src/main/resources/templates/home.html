@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <title>Home</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Home')">
 </head>
 <body>
 
-<h1>Greetings, <th:block th:text="${username}"></th:block></h1>
+<nav th:replace="partials/navbar :: nav"></nav>
 
+<main class="container">
+    <div class="card mx-auto" style="height: 100%; width: 100%">
+        <img src="https://placekitten.com/750/500" class="mx-auto" style="height: 50%; width: 50%" />
+    </div>
+</main>
 
+<div th:replace="partials/footer :: footer"></div>
 </body>
 </html>
