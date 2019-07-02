@@ -4,6 +4,7 @@ import com.codeup.springblog.models.Post;
 import com.codeup.springblog.models.User;
 import com.codeup.springblog.repos.PostRepository;
 import com.codeup.springblog.repos.UserRepository;
+import com.codeup.springblog.services.EmailService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +14,12 @@ public class PostController {
 
     private PostRepository postDao;
     private UserRepository userDao;
+    private EmailService emailSvc;
 
-    public PostController(PostRepository postDao, UserRepository userDao) {
+    public PostController(PostRepository postDao, UserRepository userDao, EmailService emailSvc) {
         this.postDao = postDao;
         this.userDao = userDao;
+        this.emailSvc = emailSvc;
     }
 
     @GetMapping("/posts")
@@ -65,6 +68,13 @@ public class PostController {
     public String delete(@PathVariable long id) {
         postDao.delete(id);
         return "redirect:/posts";
+    }
+
+    @GetMapping("/email-test")
+    @ResponseBody
+    public String emailTest(){
+        emailSvc.prepareAndSend(postDao.findOne(11L), "you made a post", "testing");
+        return "testing email...";
     }
 
 }

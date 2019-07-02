@@ -18,4 +18,4 @@ values
        ('sniff', 'Swat at dog plays league of legends yet hell is other people and throw down all the stuff in the kitchen mouse mrow and scamper. Headbutt owner''s knee eat owner''s food or murr i hate humans they are so annoying yet enslave the hooman have a lot of grump in yourself because you can''t forget to be grumpy and not be like king grumpy cat and pee in the shoe. Catto munch salmono ptracy, but sleeps on my head meow go back to sleep owner brings food and water tries to pet on head, so scratch get sprayed by water because bad cat skid on floor, crash into wall chew on cable.'),
        ('meow', 'Lick plastic bags howl on top of tall thing so ask to be pet then attack owners hand, stuff and things and attack the child but Gate keepers of hell. Slap owner''s face at 5am until human fills food dish howl on top of tall thing but run outside as soon as door open and stare out cat door then go back inside mrow yet use lap as chair.');
 
-
+insert into posts(body, title, author_id) VALUES ('test', 'something', 1);
