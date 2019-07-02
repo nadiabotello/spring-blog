@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PostController {
 
-    private final PostRepository postDao;
-    private final UserRepository userDao;
+    private PostRepository postDao;
+    private UserRepository userDao;
 
     public PostController(PostRepository postDao, UserRepository userDao) {
         this.postDao = postDao;
@@ -25,26 +25,49 @@ public class PostController {
         return "posts/index";
     }
 
+    @GetMapping("/posts/{id}")
+    public String show(@PathVariable long id, Model model) {
+        model.addAttribute("post", postDao.findOne(id));
+        return "posts/show";
+    }
+
     @GetMapping("/posts/create")
     public String create() {
         return "/posts/create";
     }
 
+
     @PostMapping("/posts/create")
     public String insert(
             @RequestParam String title,
             @RequestParam String body) {
-        User user = userDao.findOne(1L);
         Post postToInsert = new Post(title, body);
-        postDao.save(postToInsert).setUser(user);
+        postToInsert.setAuthor(userDao.findOne((long) 1));
+        postDao.save(postToInsert);
         return "redirect:/posts/index";
     }
 
-    @GetMapping("/posts/{id}")
-    public String delete(@PathVariable long id, Model model){
-        model.addAttribute("posts", postDao.findOne(id));
-//        postDao.delete(id);
-        return "/posts/show";
+    @GetMapping("/posts/{id}/edit")
+    public String edit(@PathVariable long id, Model model) {
+        model.addAttribute("post", postDao.findOne(id));
+        return "posts/edit";
+    }
+
+    @PostMapping("/posts/{id}/edit")
+    public String update(
+            @PathVariable long id,
+            @RequestParam String title,
+            @RequestParam String body) {
+
+        Post postToEdit = new Post(id, title, body);
+        postDao.save(postToEdit);
+        return "redirect:/posts";
+    }
+
+    @PostMapping("/posts/{id}/delete")
+    public String delete(@PathVariable long id) {
+        postDao.delete(id);
+        return "redirect:/posts";
     }
 
 }

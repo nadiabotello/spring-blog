@@ -17,16 +17,9 @@ public class Post {
     private String body;
 
     @ManyToOne
-    @JoinColumn (name = "user_id")
-    private User user;
+    @JoinColumn (name = "author_id")
+    private User author;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     public Post(long id, String title, String body) {
         this.id = id;
@@ -64,5 +57,13 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 }

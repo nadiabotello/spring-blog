@@ -10,8 +10,6 @@ select * from user;
 
 select * from posts;
 
-drop table people;
-
 insert into posts(title, body)
 values
        ('hiss', 'Pretend you want to go out but then don''t love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater). Being gorgeous with belly side up. I like fish run as fast as i can into another room for no reason but all of a sudden cat goes crazy'),

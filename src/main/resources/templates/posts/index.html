@@ -1,60 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8" />
-    <title>Cat Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<!--    <link href="/static/css/styles.css" rel="stylesheet" />-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/static/css/index.css" rel="stylesheet" />
+<head th:replace="partials/head :: head('View Posts')">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 <body>
-<!--<div th:replace="partials/header :: header"></div>-->
-<header class="navbar navbar-default navbar-fixed-top" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="/" class="navbar-brand">Home</a>
-        </div>
-        <nav class="collapse navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="#">Posts</a>
-                </li>
-                <li>
-                    <a href="#">Create Post</a>
-                </li>
-                <li>
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="#">Register</a>
-                </li>
-            </ul>
-<!--            <ul class="nav navbar-right navbar-nav">-->
-<!--                <li class="dropdown">-->
-<!--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>-->
-<!--                    <ul class="dropdown-menu" style="padding:12px;">-->
-<!--&lt;!&ndash;                        <form class="form-inline">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="input-group">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <input type="text" class="form-control" placeholder="Search for..." />&ndash;&gt;-->
-<!--&lt;!&ndash;                                <span class="input-group-btn">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <button class="btn btn-default" type="button">Go!</button>&ndash;&gt;-->
-<!--&lt;!&ndash;                  </span>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </form>&ndash;&gt;-->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--            </ul>-->
-        </nav>
-    </div>
-</header>
+
+<nav th:replace="partials/navbar :: nav"></nav>
 
 <div id="masthead">
     <div class="container">
@@ -103,6 +55,7 @@
                                         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
                                         dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
                                         Aliquam in felis sit amet augue.</p>
+                                    <a th:href="@{'/posts/'+${post.id}+'/edit'}">Edit</a>
                                     <p class="lead"><button class="btn btn-default">Read More</button></p>
                                     <p class="pull-right"><span class="label label-default">keyword</span> <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
                                     <ul class="list-inline"><li><a href="#">2 Days Ago</a></li><li><a href="#"><i class="glyphicon glyphicon-comment"></i> 4 Comments</a></li><li><a href="#"><i class="glyphicon glyphicon-share"></i> 34 Shares</a></li></ul>
@@ -141,6 +94,8 @@
                 <a class="btn btn-google-plus btn-md" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
             </div>
 
+            <th:block th:include="partials/footer :: footer" />
+
         </div>
     </div>
 </div>
@@ -165,14 +120,5 @@
         </div>
     </div>
 </footer>
-<!-- script references -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
-<script src="/static/js/bootstrap.min.js"></script>
-<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
 </body>
 </html>

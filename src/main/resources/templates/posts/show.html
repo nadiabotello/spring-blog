@@ -9,10 +9,7 @@
             <img src="http://placekitten.com/600/400" class="mx-auto" style="height: 50%; width: 50%" />
             <h3 class="text-center" th:text="${title}"></h3>
             <p class="text-center" th:text="${body}"></p>
-            <h1 class="text-center" th:text="${user.email}"></h1>
-            <div class="btn-group mx-auto" style="display: inline-block">
-                <button type="button" class="btn btn-warning">Edit</button>
-                <button type="button" class="btn btn-danger">Delete</button>
+            <h1 class="text-center" th:text="${post.author.email}"></h1>
             </div>
         </div>
 </main>
