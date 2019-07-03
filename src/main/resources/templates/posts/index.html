@@ -18,7 +18,8 @@
                 <div class="well well-lg">
                     <div class="row">
                         <div class="col-sm-12">
-                            <a class="story-img" href="#" ><img src="https://placekitten.com/400/200" class="img-circle" /></a>
+                            <a class="story-img" href="#"><img src="https://placekitten.com/400/200"
+                                                               class="img-circle"/></a>
                         </div>
                     </div>
                 </div>
@@ -40,41 +41,52 @@
 
 
                     <th:block th:each="post : ${posts}">
-                    <div class="row">
-                        <br />
-                        <div class="col-md-2 col-sm-3 text-center">
-                            <a class="story-img" href="#" ><img src="https://placekitten.com/100/100" style="width:100px;height:100px" class="img-circle" /></a>
-                        </div>
-                        <div class="col-md-10 col-sm-9">
-                            <h3 th:text="${post.title}"></h3>
-                            <div class="row">
-                                <div class="col-xs-9">
-                                    <p th:text="${post.body}">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                                        Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                                        dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                                        Aliquam in felis sit amet augue.</p>
-                                    <a th:href="@{'/posts/'+${post.id}+'/edit'}"><button class="btn btn-default">Edit</button></a>
-
-                                    <p class="pull-right">
-                                        <span class="label label-default"><i class="fa fa-tags" aria-hidden="true"></i></span>
-                                        <span class="label label-default">tag</span> <span class="label label-default">post</span></p>
-                                    <ul class="list-inline"><li><i class="fas fa-highlighter"></i><a href="#">2 Days Ago</a></li><li><i class="far fa-comment"></i>4 Comments</li><li><a href="#"><i class="far fa-share-square"></i>34 Shares</a></li></ul>
-                                </div>
-                                <div class="col-xs-3"></div>
+                        <div class="row">
+                            <br/>
+                            <div class="col-md-2 col-sm-3 text-center">
+                                <a class="story-img" href="#"><img src="https://placekitten.com/100/100"
+                                                                   style="width:100px;height:100px" class="img-circle"/></a>
                             </div>
-                            <br />
+                            <div class="col-md-10 col-sm-9">
+                                <h3 th:text="${post.title}"></h3>
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <p th:text="${post.body}">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit. Duis pharetra varius quam sit amet vulputate.
+                                            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a
+                                            libero. Aenean sit amet felis
+                                            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis
+                                            elementum auctor accumsan.
+                                            Aliquam in felis sit amet augue.</p>
+                                        <a th:href="@{'/posts/'+${post.id}+'/edit'}">
+                                            <button class="btn btn-default">Edit</button>
+                                        </a>
+
+                                        <p class="pull-right">
+                                            <span class="label label-default"><i class="fa fa-tags"
+                                                                                 aria-hidden="true"></i></span>
+                                            <span class="label label-default">tag</span> <span
+                                                class="label label-default">post</span></p>
+                                        <ul class="list-inline">
+                                            <li><i class="fas fa-highlighter"></i><a href="#">2 Days Ago</a></li>
+                                            <li><i class="far fa-comment"></i>4 Comments</li>
+                                            <li><a href="#"><i class="far fa-share-square"></i>34 Shares</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                <br/>
+                            </div>
                         </div>
-                    </div>
-                    <hr />
+                        <hr/>
                     </th:block>
 
                     <div class="text-center">
-                    <a href="/" class="btn btn-info">More</a>
+                        <a href="/" class="btn btn-info">More</a>
                     </div>
 
                 </div>
             </div>
-
 
 
         </div>
@@ -82,21 +94,8 @@
 </div>
 
 
-<hr />
+<hr/>
 
-<!--<div class="container" id="footer">-->
-<!--    <div class="row">-->
-<!--        <div class="col col-sm-12">-->
-<!--            <h2>Follow</h2>-->
-<!--            <div class="btn-group">-->
-<!--                <a class="btn btn-twitter btn-md" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>-->
-<!--                <a class="btn btn-facebook btn-md" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
-<!--<hr />-->
 
 <div th:replace="partials/footer :: footer"></div>
 </body>

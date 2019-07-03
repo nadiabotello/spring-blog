@@ -7,10 +7,10 @@
 <nav th:replace="partials/navbar :: nav"></nav>
 
 <h1 class="text-center">Log In</h1>
-<div th:if="${param.error}" class="text-center">
+<div th:if="${param.error}" class="text-center" style="color: red;">
     Invalid Username and Password.
 </div>
-<div th:if="${param.logout}" class="text-center">
+<div th:if="${param.logout}" class="text-center" style="color: red;">
     You have been logged out.
 </div>
 
