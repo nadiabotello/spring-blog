@@ -14,7 +14,7 @@
     Email: <span th:text="${#authentication.principal.email}"/>
 </div>
 
-<div class="d-flex justify-content-center align-items-center container ">
+<div class="d-flex justify-content-center align-items-center container">
     <div class="row ">
 <form th:action="@{'/posts/create'}" th:method="POST" th:object="${post}">
     <div class="form-group">
