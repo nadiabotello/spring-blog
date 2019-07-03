@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head th:replace="partials/head :: head('500 Error')">
+</head>
+<body>
+
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<div>
+        <div class="col-lg-6 col-lg-offset-3 text-center error">
+            <img src="img/500error.jpg" />
+        </div>
+</div>
+
+
+<div th:replace="partials/footer :: footer"></div>
+</body>
+</html>
