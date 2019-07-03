@@ -1,8 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="partials/head :: head('Create a Post')"></div>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="partials/head :: head('View Posts')">
+</head>
 <body>
-<div th:replace="partials/navbar :: navbar"></div>
+
+<nav th:replace="partials/navbar :: nav"></nav>
+
+<div sec:authorize="isAuthenticated()">
+    This content is only shown to authenticated users.
+
+    User ID: <span th:text="${#authentication.principal.id}"/>
+    Username: <span th:text="${#authentication.principal.username}"/>
+    Email: <span th:text="${#authentication.principal.email}"/>
+</div>
 
 <div class="d-flex justify-content-center align-items-center container ">
     <div class="row ">
