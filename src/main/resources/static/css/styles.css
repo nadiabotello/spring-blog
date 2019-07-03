@@ -13,6 +13,10 @@ footer {
   background-color:#ededed;
 }
 
+.nav{
+  padding-top: 20px;
+}
+
 
 #masthead {
   min-height:199px;
@@ -105,6 +109,11 @@ a,a:hover {
 .error{
   float: none;
   margin: 0 auto;
+  margin-top: 20px;
+}
+
+.home-img{
+  margin-top: 155px;
 }
 
 

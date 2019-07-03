@@ -9,7 +9,10 @@ import com.codeup.springblog.services.EmailService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class PostController {
@@ -50,6 +53,21 @@ public class PostController {
         postDao.save(post);
         return "redirect:/posts";
     }
+
+//    @PostMapping("/posts/create")
+//    public String validatePost(
+//            @Valid Post post,
+//            Errors validation,
+//            Model model
+//    ) {
+//        if (validation.hasErrors()) {
+//            model.addAttribute("errors", validation);
+//            model.addAttribute("post", post);
+//            return "posts/create";
+//        }
+//
+//        return "redirect:/posts";
+//    }
 
     @GetMapping("/posts/{id}/edit")
     public String edit(@PathVariable long id, Model model) {
