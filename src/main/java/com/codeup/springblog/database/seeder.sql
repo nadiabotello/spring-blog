@@ -32,3 +32,5 @@ values
         ('british shorthair'),
         ('bengal');
 
+INSERT INTO posts_categories (post_id, category_id)
+SELECT posts.ID, categories.ID FROM posts CROSS JOIN categories;

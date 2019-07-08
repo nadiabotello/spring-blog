@@ -4,7 +4,9 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name="posts")
@@ -33,8 +35,6 @@ public class Post {
             inverseJoinColumns={@JoinColumn(name="category_id")}
     )
     private List<PostCategory> categories;
-
-
 
 
     public Post(long id, String title, String body) {
@@ -82,4 +82,7 @@ public class Post {
     public void setAuthor(User author) {
         this.author = author;
     }
+
+
+
 }
