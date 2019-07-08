@@ -7,7 +7,7 @@
 
 <nav th:replace="partials/navbar :: nav"></nav>
 
-<main class="container">
+<main class="container text-center">
     <form th:action="@{'/posts/' + ${post.id} + '/edit'}" th:method="POST" th:object="${post}">
         <div class="form-group">
             <label for="title">Title</label>
@@ -17,15 +17,15 @@
             <label for="body">Body</label>
             <textarea class="form-control" name="body" id="body" cols="30" rows="10" th:field="*{body}"></textarea>
         </div>
-        <button class="btn btn-block btn-primary"><i class="fa fa-cog"></i>Submit</button>
+        <button class="btn btn-primary"><i class="fa fa-cog"></i> Submit</button>
     </form>
+    <br />
     <form th:action="@{'/posts/' + ${post.id} + '/delete'}" th:method="POST" th:object="${post}">
-        <button class="btn btn-danger"><i class="fa fa-trash-o fa-lg"></i>Delete</button>
+        <button class="btn btn-danger text-center"><i class="fa fa-trash-o fa-lg"></i> Delete</button>
     </form>
 </main>
 
 
-<th:block th:include="partials/footer :: footer" />
-
+<div th:replace="partials/footer :: footer"></div>
 </body>
 </html>

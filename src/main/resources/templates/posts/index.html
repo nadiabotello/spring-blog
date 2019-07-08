@@ -59,7 +59,7 @@
                                             elementum auctor accumsan.
                                             Aliquam in felis sit amet augue.</p>
                                         <a th:href="@{'/posts/'+${post.id}+'/edit'}">
-                                            <button class="btn btn-default">Edit</button>
+                                            <button class="btn btn-sm btn-default"><i class="fa fa-cog"></i> Edit</button>
                                         </a>
 
                                         <p class="pull-right">
@@ -68,9 +68,9 @@
                                             <span class="label label-default">tag</span> <span
                                                 class="label label-default"></span></p>
                                         <ul class="list-inline">
-                                            <li><i class="fas fa-highlighter"></i><a href="#">2 Days Ago</a></li>
-                                            <li><i class="far fa-comment"></i>4 Comments</li>
-                                            <li><a href="#"><i class="far fa-share-square"></i>34 Shares</a></li>
+                                            <li><a href="#">2 Days Ago</a></li>
+                                            <li><a href="#">4 Comments</a></li>
+                                            <li><a href="#">34 Shares</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-xs-3"></div>
@@ -82,7 +82,7 @@
                     </th:block>
 
                     <div class="text-center">
-                        <a href="/" class="btn btn-info">More</a>
+                        <a href="/" class="btn btn-info disabled">More</a>
                     </div>
 
                 </div>
