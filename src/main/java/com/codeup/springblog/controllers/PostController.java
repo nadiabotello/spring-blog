@@ -74,26 +74,12 @@ public class PostController {
 
         User author = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         post.setAuthor(author);
-//        posts.add(post);
-        postDao.save(post);
+        Post savedPost = postDao.save(post);
+        emailSvc.prepareAndSend(savedPost, "Post has been created", "The post has been successfully created. Title: " + savedPost.getTitle());
 
         return "redirect:/posts";
     }
 
-//    @PostMapping("/posts/create")
-//    public String validatePost(
-//            @Valid Post post,
-//            Errors validation,
-//            Model model
-//    ) {
-//        if (validation.hasErrors()) {
-//            model.addAttribute("errors", validation);
-//            model.addAttribute("post", post);
-//            return "posts/create";
-//        }
-//
-//        return "redirect:/posts";
-//    }
 
     @GetMapping("/posts/{id}/edit")
     public String edit(@PathVariable long id, Model model) {
