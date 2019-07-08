@@ -1,6 +1,7 @@
 package com.codeup.springblog.controllers;
 
 import com.codeup.springblog.models.Post;
+import com.codeup.springblog.models.PostCategory;
 import com.codeup.springblog.models.User;
 import com.codeup.springblog.models.UserWithRoles;
 import com.codeup.springblog.repos.PostRepository;
@@ -13,6 +14,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class PostController {
@@ -26,6 +28,19 @@ public class PostController {
         this.userDao = userDao;
         this.emailSvc = emailSvc;
     }
+
+//    @RequestMapping(value="/viewposts/{pageid}")
+//    public String edit(@PathVariable int pageid, Model model){
+//        int total=5;
+//        if(pageid==1){}
+//        else{
+//            pageid=(pageid-1)*total+1;
+//        }
+//        System.out.println(pageid);
+//        List<Post> list=postDao.getPostsByPage(pageid,total);
+//        model.addAttribute("msg", list);
+//        return "posts/index";
+//    }
 
     @GetMapping("/posts")
     public String index(Model model) {
@@ -50,6 +65,7 @@ public class PostController {
     public String insert(@ModelAttribute Post post) {
         User author = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         post.setAuthor(author);
+//        posts.add(post);
         postDao.save(post);
         return "redirect:/posts";
     }

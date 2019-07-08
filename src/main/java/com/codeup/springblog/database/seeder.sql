@@ -10,6 +10,10 @@ select * from user;
 
 select * from posts;
 
+select * from categories;
+
+select * from posts_categories;
+
 insert into posts(title, body, author_id)
 values
        ('hiss', 'Pretend you want to go out but then don''t love and coo around boyfriend who purrs and makes the perfect moonlight eyes so i can purr and swat the glittery gleaming yarn to him (the yarn is from a $125 sweater). Being gorgeous with belly side up. I like fish run as fast as i can into another room for no reason but all of a sudden cat goes crazy', 1),
@@ -19,3 +23,12 @@ values
        ('meow', 'Lick plastic bags howl on top of tall thing so ask to be pet then attack owners hand, stuff and things and attack the child but Gate keepers of hell. Slap owner''s face at 5am until human fills food dish howl on top of tall thing but run outside as soon as door open and stare out cat door then go back inside mrow yet use lap as chair.', 2);
 
 insert into posts(body, title, author_id) VALUES ('test', 'something', 1);
+
+insert into categories(name)
+values
+        ('egyptian mau'),
+        ('maine coon'),
+        ('devon rex'),
+        ('british shorthair'),
+        ('bengal');
+
