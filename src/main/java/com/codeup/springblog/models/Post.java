@@ -15,12 +15,11 @@ public class Post {
     private long id;
 
     @Column(nullable = false)
-//    @NotBlank(message = "Posts must have a title")
+    @NotBlank(message = "Posts must have a title")
     private String title;
 
     @Column(nullable = false, length = 1000)
-//    @NotBlank(message = "Posts must have a description")
-//    @Size(min = 10, message = "A title must be at least 10 characters.")
+    @NotBlank(message = "Posts must have a description")
     private String body;
 
     @ManyToOne

@@ -62,11 +62,21 @@ public class PostController {
 
 
     @PostMapping("/posts/create")
-    public String insert(@ModelAttribute Post post) {
+    public String insert(@Valid Post post,
+                         Errors validation,
+                         Model model) {
+
+        if (validation.hasErrors()) {
+            model.addAttribute("errors", validation);
+            model.addAttribute("post", post);
+            return "posts/create";
+        }
+
         User author = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         post.setAuthor(author);
 //        posts.add(post);
         postDao.save(post);
+
         return "redirect:/posts";
     }
 

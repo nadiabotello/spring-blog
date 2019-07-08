@@ -21,12 +21,12 @@
     <div class="form-group">
         <label for="title">Post Title</label>
         <input type="text" class="form-control" th:field="*{title}" placeholder="Post Title" />
-<!--        <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" />-->
+        <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color: red;" />
     </div>
     <div class="form-group">
         <label for="body">Post Text</label>
         <textarea class="form-control" th:field="*{body}" cols="30" rows="10"></textarea>
-<!--        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" />-->
+        <p th:if="${#fields.hasErrors('body')}" th:errors="*{body}" style="color: red;"/>
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Post Category</label>
