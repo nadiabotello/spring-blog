@@ -24,17 +24,17 @@ A place for all your cat-centric blog posting needs!
 
 ## Getting Started
 
-Register as a new user, and create cat-centric blog posts.
+Register as a new user, and create your cat-centric blog posts.
 
 
 ## Features
 
 * User Registration
 * User Login/Logout
-* Create, Edit, and Delete Post
-* (Cat) Post View-All Index Page
+* Create, Edit, and Delete Posts
+* View-All Posts Index Page
 * Individal Post View Pages
-* Form Validation
+* Create Post Form Validation
 * Custom Error Pages (403, 404, 500)
 * Database Persistence
 * Many-to-Many DB Relationships
