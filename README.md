@@ -55,6 +55,7 @@ Register as a new user, and create your cat-centric blog posts.
 ## Built With
 
 * [Spring Boot](https://spring.io/projects/spring-boot) - Spring Boot
+* [Spring Security](https://spring.io/projects/spring-security) - Spring Security
 * [Java](https://www.java.com/en/) - Java
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [Apache Tomcat](https://tomcat.apache.org/) - Apache Tomcat
