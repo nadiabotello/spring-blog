@@ -20,7 +20,6 @@ A place for all your cat-centric blog posting needs!
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ::::::::::::::::::::::::::::::::::
-----''''''''''''''''''''''''''''''''''----
 
 
 ## Getting Started
@@ -39,7 +38,7 @@ Register as a new user, and create cat-centric blog posts.
 * Custom Error Pages (403, 404, 500)
 * Database Persistence
 * Many-to-Many DB Relationships
-* Email Notifications for Posts (Dev)
+* Email Notifications for Posts (in Dev with Mailtrap)
 * Minimal Bootstrap Styling
 
 ## Work-in-Progress Features
@@ -57,6 +56,7 @@ Register as a new user, and create cat-centric blog posts.
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [MySQL](http://mysql.com/) - MySQL
 * [Thymeleaf](https://www.thymeleaf.org/) - Thymeleaf
+* [Mailtrap](https://mailtrap.io) - Mailtrap
 * [Bootstrap](http://getbootstrap.com/) - Bootstrap
 * [Place Kitten](https://placekitten.com/) - Place Kitten Images
 * [Cat Ipsum](http://catipsum.com/) - Cat Ipsum
