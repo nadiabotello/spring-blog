@@ -1,6 +1,6 @@
 # Spring Blog: Cat Edition
 
-A place for all your cat-centric blog posting needs!
+A place for all your cat-centric blog posting needs! -- [lissonfus.com](https://lissonfus.com/)
 
                       ,/\,,,,/\,.
                      =          =,
@@ -41,6 +41,7 @@ Register as a new user, and create your cat-centric blog posts.
 * Many-to-Many DB Relationships
 * Email Notifications for Posts (in Dev with Mailtrap)
 * Minimal Bootstrap Styling
+* HTTPS Enabled
 
 ## Work-in-Progress Features
 
