@@ -45,9 +45,9 @@ Register as a new user, and create your cat-centric blog posts.
 
 ## Work-in-Progress Features
 
-* Dynamic Search
+* Dynamic Post Search
 * Dynamic NavBar (based on user)
-* Further Styling
+* Styling (w Mobile Response Fixes)
 * Push Categories to Post Tags
 * Pagination
 
