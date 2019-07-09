@@ -52,8 +52,10 @@ Register as a new user, and create cat-centric blog posts.
 
 ## Built With
 
+* [Spring Boot](https://spring.io/projects/spring-boot) - Spring Boot
 * [Java](https://www.java.com/en/) - Java
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Apache Tomcat](https://tomcat.apache.org/) - Apache Tomcat
 * [MySQL](http://mysql.com/) - MySQL
 * [Thymeleaf](https://www.thymeleaf.org/) - Thymeleaf
 * [Mailtrap](https://mailtrap.io) - Mailtrap
