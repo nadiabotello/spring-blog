@@ -29,8 +29,9 @@ Register as a new user, and create your cat-centric blog posts.
 
 ## Features
 
-* User Registration
+* Secure User Registration
 * User Login/Logout
+* User Authentication for Posting/Editing Functionality
 * Create, Edit, and Delete Posts
 * View-All Posts Index Page
 * Individal Post View Pages
